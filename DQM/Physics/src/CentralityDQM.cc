@@ -145,7 +145,7 @@ void CentralityDQM::analyze(const edm::Event& iEvent,
   if (!cent.isValid()) return;
   int hibin = *cbin;
   
-  std::cout<<  " ------------------------------------- "  << hibin << std::endl;
+  //std::cout<<  " ------------------------------------- "  << hibin << std::endl;
 
   h_cent_bin->Fill(hibin);
   h_hiNpix->Fill(cent->multiplicityPixel());
