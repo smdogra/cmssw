@@ -175,7 +175,8 @@ void CentralityDQM::analyze(const edm::Event& iEvent,
   h_hiEE->Fill(cent->EtEESum());
   h_hiEB->Fill(cent->EtEBSum());
   h_hiET->Fill(cent->EtMidRapiditySum());
-
+  
+if (ep.isValid()){ 
   edm::Handle<std::vector<reco::Vertex> > vertex;
   iEvent.getByToken(vertexToken, vertex);
   h_vertex_x->Fill(vertex->begin()->x());
@@ -199,5 +200,5 @@ void CentralityDQM::analyze(const edm::Event& iEvent,
   h_ep_HFm3->Fill((rp+HFm3)->angle(0));
   h_ep_HFp3->Fill((rp+HFp3)->angle(0));
   h_ep_trackmid3->Fill((rp+trackmid3)->angle(0));
-
+ }
 }
