@@ -141,8 +141,8 @@ void CentralityDQM::analyze(const edm::Event& iEvent,
   //"hiCentrality"
   edm::Handle<reco::EvtPlaneCollection> ep;
   iEvent.getByToken(eventplaneToken, ep);
-
-  if (!cent.isValid()) return;
+if(cent.isValid()){
+  //if (!cent.isValid()) return;
   int hibin = *cbin;
   
   //std::cout<<  " ------------------------------------- "  << hibin << std::endl;
@@ -182,6 +182,8 @@ void CentralityDQM::analyze(const edm::Event& iEvent,
   h_vertex_x->Fill(vertex->begin()->x());
   h_vertex_y->Fill(vertex->begin()->y());
   h_vertex_z->Fill(vertex->begin()->z());
+  
+}
 if (ep.isValid()){ 
   EvtPlaneCollection::const_iterator rp = ep->begin();
   h_ep_HFm1->Fill(rp[HFm1].angle(0));
