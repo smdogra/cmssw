@@ -5,5 +5,4 @@ CentralityDQM = cms.EDAnalyzer(
     centralitybincollection = cms.InputTag("centralityBin","HFtowers"),
     vertexcollection = cms.InputTag("hiSelectedVertex"),
     eventplanecollection= cms.InputTag("hiEvtPlane")
-
     )
