@@ -99,7 +99,7 @@ void CentralitypADQM::analyze(const edm::Event& iEvent,const edm::EventSetup& iS
   edm::Handle<reco::Centrality> cent;
   iEvent.getByToken(centralityToken, cent);  //_centralitytag comes from the cfg
 
-  //  if(cent.isValid()){
+    if(cent.isValid()){
     h_hiNpix->Fill(cent->multiplicityPixel());
     h_hiNtracks->Fill(cent->Ntracks());  
     
@@ -132,5 +132,5 @@ void CentralitypADQM::analyze(const edm::Event& iEvent,const edm::EventSetup& iS
     h_vertex_x->Fill(vertex->begin()->x());
     h_vertex_y->Fill(vertex->begin()->y());
     h_vertex_z->Fill(vertex->begin()->z());
-    //  }
+      }
 }
